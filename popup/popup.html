@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Saved URLs</title>
     <link rel="stylesheet" href="../styles/style.css" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
-      #urlList {
-        margin-top: 10px;
-      }
-      .urlItem {
-        margin-bottom: 5px;
-      }
-    </style>
-  </head>
-  <body>
+</head>
+<body>
     <h1>Saved URLs</h1>
-    <button id="saveUrlButton">Save Current URL</button>
+    <button class="buttonadddelete" id="saveUrlButton">Save Current URL</button>
+    <button class="buttonadddelete" id="deleteAllButton" style="display: none;">Delete All</button>
     <div id="urlList"></div>
     <script src="popup.js"></script>
-  </body>
+</body>
 </html>
