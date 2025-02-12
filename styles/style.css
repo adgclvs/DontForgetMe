@@ -10,6 +10,15 @@ h1 {
   font-size: 24px;
   text-align: center;
   margin-bottom: 20px;
+  text-align: center;
+  padding-left: 5px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .buttonadddelete {
@@ -87,4 +96,27 @@ body {
 
 .urlItem button:hover {
   background-color: #ff1a1a;
+}
+
+.darkMode {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  position: absolute;
+  right: 0;
+  width: 40px; 
+  height: 40px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.darkMode i {
+  font-size: 24px; 
+}
+
+.darkMode:hover {
+  color: #007bff;
 }

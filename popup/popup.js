@@ -81,3 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial display of URLs when the popup is opened
     displayUrls();
 });
+
+darkModeButton.addEventListener('click', function() {
+    if (darkModeIcon.classList.contains('fa-moon-o')) {
+        darkModeIcon.classList.remove('fa-moon-o');
+        darkModeIcon.classList.add('fa-sun-o');
+    } else {
+        darkModeIcon.classList.remove('fa-sun-o');
+        darkModeIcon.classList.add('fa-moon-o');
+    }
+});
