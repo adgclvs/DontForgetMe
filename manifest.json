@@ -5,7 +5,8 @@
     "manifest_version": 3,
     "permissions": [
         "storage",
-        "activeTab"
+        "activeTab",
+        "notifications"
     ],
     "action": {
         "default_popup": "popup/popup.html",
@@ -13,5 +14,22 @@
     },
     "background": {
         "service_worker": "scripts/background.js"
+    },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Y",
+                "mac": "MacCtrl+Shift+Y"
+            },
+            "description": "Opens the extension popup"
+        },
+        "save_url": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+S",
+                "mac": "MacCtrl+Shift+S"
+            },
+            "description": "Save the current URL"
+        }
     }
+
 }
