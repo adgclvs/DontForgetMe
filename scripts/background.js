@@ -35,6 +35,7 @@ function showNotification(title, message) {
         type: 'basic',
         iconUrl: chrome.runtime.getURL('images/icon48.png'),
         title: title,
-        message: message
+        message: message,
+        requireInteraction: false
     });
 }

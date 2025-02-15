@@ -3,22 +3,57 @@ body {
   background-color: #f4f4f9;
   margin: 0;
   padding: 20px;
+  width: 12rem;
+  height: 20rem;
+  overflow: hidden;
 }
 
-h1 {
-  color: #333;
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 20px;
-  text-align: center;
-  padding-left: 5px;
+body.dark-mode {
+  background-color: #333;
+  color: #f4f4f9;
 }
 
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+body.dark-mode h1 {
+  color: #f4f4f9;
+}
+
+.darkmodebutton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  position: absolute;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.dark-mode .darkmodebutton {
+  color: #f4f4f9;
+}
+
+.darkmodebutton i {
+  font-size: 24px; 
+}
+
+.darkmodebutton:hover {
+  color: #007bff;
 }
 
 .buttonadddelete {
@@ -39,13 +74,6 @@ h1 {
   background-color: #0056b3;
 }
 
-body {
-  width: 15rem;
-  height: 20rem;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
-}
-
 #urlList {
   margin-top: 10px;
   max-height: calc(100% - 60px);
@@ -62,6 +90,12 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
+body.dark-mode .urlItem {
+  background: #444;
+  border-color: #555;
+}
+
 .urlItem a {
   flex-grow: 1;
   margin-right: 10px;
@@ -70,13 +104,10 @@ body {
   color: #007bff;
 }
 
-.urlItem:nth-child(odd) {
-  background: #80808030;
+body.dark-mode .urlItem a {
+  color: #1e90ff;
 }
 
-.urlItem:nth-child(even) {
-  background: #ffffff;
-}
 
 .urlItem span {
   flex-grow: 1;
@@ -96,27 +127,4 @@ body {
 
 .urlItem button:hover {
   background-color: #ff1a1a;
-}
-
-.darkMode {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-  color: #333;
-  position: absolute;
-  right: 0;
-  width: 40px; 
-  height: 40px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.darkMode i {
-  font-size: 24px; 
-}
-
-.darkMode:hover {
-  color: #007bff;
 }

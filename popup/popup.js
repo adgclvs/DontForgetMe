@@ -4,6 +4,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const saveUrlButton = document.getElementById('saveUrlButton');
     const urlList = document.getElementById('urlList');
+    const darkModeButton = document.getElementById('darkModeButton');
+    const darkModeIcon = document.getElementById('darkModeIcon'); 
 
     /**
      * Event listener for the "Save Current URL" button.
@@ -28,6 +30,17 @@ document.addEventListener('DOMContentLoaded', function() {
         chrome.storage.sync.set({ urls: [] }, function() {
             displayUrls();
         });
+    });
+
+    darkModeButton.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        if (darkModeIcon.classList.contains('fa-moon-o')) {
+            darkModeIcon.classList.remove('fa-moon-o');
+            darkModeIcon.classList.add('fa-sun-o');
+        } else {
+            darkModeIcon.classList.remove('fa-sun-o');
+            darkModeIcon.classList.add('fa-moon-o');
+        }
     });
 
     /**
@@ -82,12 +95,3 @@ document.addEventListener('DOMContentLoaded', function() {
     displayUrls();
 });
 
-darkModeButton.addEventListener('click', function() {
-    if (darkModeIcon.classList.contains('fa-moon-o')) {
-        darkModeIcon.classList.remove('fa-moon-o');
-        darkModeIcon.classList.add('fa-sun-o');
-    } else {
-        darkModeIcon.classList.remove('fa-sun-o');
-        darkModeIcon.classList.add('fa-moon-o');
-    }
-});
