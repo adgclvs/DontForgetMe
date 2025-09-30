@@ -7,10 +7,17 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.commands.onCommand.addListener(handleCommand);
 
 function handleCommand(command) {
+    console.log("Command received:", command); // Debug log
     if (command === "save_url") {
         chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
             const url = tabs[0].url;
+            console.log("Saving URL:", url); // Debug log
             saveUrl(url);
+        });
+    } else if (command === "delete_all") {
+        chrome.storage.sync.set({ urls: [] }, function() {
+            console.log("All URLs deleted"); // Debug log
+            showNotification('URLs Deleted', 'All saved URLs have been deleted.');
         });
     }
 }

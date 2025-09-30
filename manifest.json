@@ -6,7 +6,8 @@
     "permissions": [
         "storage",
         "activeTab",
-        "notifications"
+        "notifications",
+        "tabs"
     ],
     "action": {
         "default_popup": "popup/popup.html",
@@ -18,17 +19,24 @@
     "commands": {
         "_execute_action": {
             "suggested_key": {
-                "default": "Ctrl+Shift+Y",
-                "mac": "MacCtrl+Shift+Y"
+                "default": "Ctrl+Y",
+                "mac": "MacCtrl+Y"
             },
             "description": "Opens the extension popup"
         },
         "save_url": {
             "suggested_key": {
-                "default": "Ctrl+Shift+S",
-                "mac": "MacCtrl+Shift+S"
+                "default": "Ctrl+Shift+U",
+                "mac": "MacCtrl+Shift+U"
             },
             "description": "Save the current URL"
+        },
+        "delete_all": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Q",
+                "mac": "MacCtrl+Shift+Q"
+            },
+            "description": "Delete all saved URLs"
         }
     }
 

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlList = document.getElementById('urlList');
     const darkModeButton = document.getElementById('darkModeButton');
     const darkModeIcon = document.getElementById('darkModeIcon'); 
+    const deleteAllButton = document.getElementById('deleteAllButton');
 
     /**
      * Event listener for the "Save Current URL" button.
@@ -63,6 +64,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 urlLink.href = url;
                 urlLink.textContent = url;
                 urlLink.target = '_blank'; // Open link in a new tab
+                
+                // Add click event to properly open links from extension popup
+                urlLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    chrome.tabs.create({ url: url });
+                });
 
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Delete';
