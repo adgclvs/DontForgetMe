@@ -3,8 +3,41 @@
     "description": "A simple chrome extension",
     "version": "1.0",
     "manifest_version": 3,
+    "permissions": [
+        "storage",
+        "activeTab",
+        "notifications",
+        "tabs"
+    ],
     "action": {
         "default_popup": "popup/popup.html",
-        "default_icon": "images/icon.png"
+        "default_icon": "images/icon48.png"
+    },
+    "background": {
+        "service_worker": "scripts/background.js"
+    },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+Y",
+                "mac": "MacCtrl+Y"
+            },
+            "description": "Opens the extension popup"
+        },
+        "save_url": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+U",
+                "mac": "MacCtrl+Shift+U"
+            },
+            "description": "Save the current URL"
+        },
+        "delete_all": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Q",
+                "mac": "MacCtrl+Shift+Q"
+            },
+            "description": "Delete all saved URLs"
+        }
     }
+
 }
